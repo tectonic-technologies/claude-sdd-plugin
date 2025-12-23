@@ -15,26 +15,13 @@ Based on research from [ARC Prize 2025](https://arcprize.org/blog/arc-prize-2025
 
 ## Installation
 
-### Via Claude Code Plugin System
+Clone the repo and run Claude Code with the `--plugin-dir` flag:
 
 ```bash
-/plugin install tectonic-technologies/claude-sdd-plugin
+git clone https://github.com/tectonic-technologies/claude-sdd-plugin.git
+cd your-project
+claude --plugin-dir ../claude-sdd-plugin
 ```
-
-### Manual Installation
-
-1. Clone this repo into your project:
-```bash
-git clone https://github.com/tectonic-technologies/claude-sdd-plugin.git .claude-plugins/sdd
-```
-
-2. Copy commands to your project:
-```bash
-cp -r .claude-plugins/sdd/commands/* .claude/commands/
-cp .claude-plugins/sdd/constitution.md .claude/
-```
-
-3. Merge CLAUDE.md with your existing one (or copy if none exists)
 
 ### Install Beads (Optional but Recommended)
 
@@ -81,6 +68,8 @@ go install github.com/steveyegge/beads/cmd/bd@latest
 | `/save` | Save progress checkpoint |
 | `/resume` | Resume from checkpoint |
 | `/mcp` | MCP servers reference |
+| `/mcp-add` | Add MCP config to registry (not auto-loaded) |
+| `/mcp-load` | Load MCP from registry on-demand |
 
 
 ## File Structure

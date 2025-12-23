@@ -158,6 +158,8 @@ This injects ~1-2k tokens of workflow context on session start.
 | 13 | `/save` | Save progress |
 | 14 | `/resume` | Resume work |
 | 15 | `/mcp` | MCP reference |
+| 16 | `/mcp-add` | Add MCP to registry |
+| 17 | `/mcp-load` | Load MCP on-demand |
 
 **Typical workflow:**
 ```
