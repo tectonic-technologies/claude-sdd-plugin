@@ -412,3 +412,58 @@ Generate minimal constitution and CLAUDE.md with TODOs for customization.
 /setup --reconfigure
 # Re-run setup, keeping existing customizations where possible
 ```
+
+
+### 6b. Linear Integration (Optional)
+
+```
+Do you use Linear for project management?
+1. Yes, set up Linear MCP
+2. No, skip
+3. Show me more info
+```
+
+If "Show me more info":
+```
+Linear MCP allows Claude to interact with your Linear workspace:
+
+CREATE:
+- linear_create_issue - Create issues with title, description, priority
+- linear_add_comment - Add comments to issues (markdown supported)
+
+READ:
+- linear_search_issues - Search with filters (team, status, assignee, labels)
+- linear_get_user_issues - Get issues assigned to a user
+
+UPDATE:
+- linear_update_issue - Modify title, description, priority, status
+
+This enables:
+- Filing issues directly from code reviews
+- Creating tickets from discovered bugs
+- Updating issue status as you work
+- Searching for related issues
+```
+
+If yes:
+```
+Linear uses OAuth authentication.
+
+To set up in Claude Code:
+1. The Linear MCP server is remote (hosted by Linear)
+2. Add to your MCP settings or use: /mcp add linear
+3. Claude will prompt for Linear OAuth on first use
+4. Grant access to your Linear workspace
+```
+
+**Beads vs Linear:**
+
+| Aspect | Beads | Linear |
+|--------|-------|--------|
+| Best for | Solo/AI agent memory | Team collaboration |
+| Storage | Git-backed local | Cloud-hosted |
+| Offline | Yes | No |
+| Dependencies | Graph-based | Basic links |
+| Cost | Free | Linear pricing |
+
+**Recommendation:** Use both! Beads for AI agent working memory, Linear for team-visible issues.
