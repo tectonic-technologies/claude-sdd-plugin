@@ -18,14 +18,14 @@ Based on research from [ARC Prize 2025](https://arcprize.org/blog/arc-prize-2025
 ### Via Claude Code Plugin System
 
 ```bash
-/plugin install nishant32f/claude-sdd-plugin
+/plugin install tectonic-technologies/claude-sdd-plugin
 ```
 
 ### Manual Installation
 
 1. Clone this repo into your project:
 ```bash
-git clone https://github.com/nishant32f/claude-sdd-plugin.git .claude-plugins/sdd
+git clone https://github.com/tectonic-technologies/claude-sdd-plugin.git .claude-plugins/sdd
 ```
 
 2. Copy commands to your project:

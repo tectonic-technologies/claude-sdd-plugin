@@ -4,7 +4,7 @@
   "description": "GCRV refinement loop with research, spec, plan, implement pipeline. Includes 16 slash commands, setup wizard, constitution template, and Beads task tracking integration.",
   "version": "1.1.0",
   "author": "skypawalker",
-  "repository": "https://github.com/nishant32f/claude-sdd-plugin",
+  "repository": "https://github.com/tectonic-technologies/claude-sdd-plugin",
   "license": "MIT",
   "keywords": ["spec-driven-development", "sdd", "refinement-loop", "gcrv", "workflow", "planning", "setup"],
   "commands": true
