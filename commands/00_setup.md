@@ -445,16 +445,29 @@ This enables:
 - Searching for related issues
 ```
 
-If yes:
-```
-Linear uses OAuth authentication.
+If yes, run this command to add Linear MCP:
 
-To set up in Claude Code:
-1. The Linear MCP server is remote (hosted by Linear)
-2. Add to your MCP settings or use: /mcp add linear
-3. Claude will prompt for Linear OAuth on first use
-4. Grant access to your Linear workspace
+```bash
+claude mcp add linear --url https://mcp.linear.app/sse
 ```
+
+Or for the full JSON config (add to .mcp.json or settings):
+
+```json
+{
+  "mcpServers": {
+    "linear": {
+      "command": "npx",
+      "args": ["-y", "@anthropic/mcp-remote", "https://mcp.linear.app/sse"]
+    }
+  }
+}
+```
+
+After adding:
+1. Restart Claude Code (or run `claude mcp list` to verify)
+2. Claude will prompt for Linear OAuth on first use
+3. Grant access to your Linear workspace
 
 **Beads vs Linear:**
 
