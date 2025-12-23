@@ -65,6 +65,7 @@ go install github.com/steveyegge/beads/cmd/bd@latest
 
 | Command | Purpose |
 |---------|---------|
+| `/setup` | Interactive setup wizard |
 | `/research` | Codebase + web research (auto-detects type) |
 | `/clarify` | Ask structured clarifying questions |
 | `/spec` | Define the contract (WHAT to build) |
@@ -80,6 +81,7 @@ go install github.com/steveyegge/beads/cmd/bd@latest
 | `/save` | Save progress checkpoint |
 | `/resume` | Resume from checkpoint |
 | `/mcp` | MCP servers reference |
+
 
 ## File Structure
 
