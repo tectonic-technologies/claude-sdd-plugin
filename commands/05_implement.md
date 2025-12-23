@@ -26,6 +26,21 @@ Implement a feature from its plan using the GCRV refinement loop, tracking any d
 - Generated tests from spec examples
 - **Plan file updated with any deviations**
 
+## Beads Integration
+
+Before starting implementation:
+
+1. **Check for existing bead**: `bd list | grep {feature-name}`
+2. **Create or update bead**:
+   ```bash
+   bd create "Implement {feature}" -p 1
+   bd update <id> --status in_progress
+   ```
+3. **File sub-tasks** for each phase as you work
+4. **Close bead** when implementation complete
+
+---
+
 ## Process
 
 ### 1. Validate Input

@@ -336,7 +336,7 @@ When stuck after 5 iterations:
 
 Save to `.claude/CLAUDE.md` (merge if exists)
 
-### 6. Beads Setup (Optional)
+### 6. Beads Setup (Recommended)
 
 ```
 Would you like to set up Beads for task tracking?
@@ -349,6 +349,23 @@ If yes:
 - Check if Go is installed
 - Run: `go install github.com/steveyegge/beads/cmd/bd@latest`
 - Run: `bd init` in project root
+- Offer editor integration: `bd setup claude` or `bd setup cursor`
+- Run `bd doctor` to verify setup
+
+If "Show me more info":
+```
+Beads is external memory for AI agents (by Steve Yegge).
+- Persistent task tracking across sessions
+- Dependency-aware graph structure
+- Git-backed, branches with your code
+- Run `bd ready` to find unblocked work
+
+Best practices:
+- File beads for anything > 2 minutes
+- Run `bd doctor` daily
+- Run `bd cleanup` when issues exceed ~200
+```
+
 
 ### 7. Summary
 

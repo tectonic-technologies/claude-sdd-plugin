@@ -5,6 +5,25 @@ Resume previously saved work by restoring full context and continuing implementa
 ## Arguments
 - `$ARGUMENTS` - Path to session file (e.g., `docs/sessions/2025-01-06_feature.md`)
 
+## Beads Integration
+
+Start by checking Beads for context:
+
+```bash
+# Find ready work
+bd ready --json
+
+# Or find in-progress work
+bd list --status in_progress
+
+# Get full context on a bead
+bd show <id>
+```
+
+Beads preserves context across sessions - use it as your starting point.
+
+---
+
 ## When to Use
 
 - Returning to a previously paused feature

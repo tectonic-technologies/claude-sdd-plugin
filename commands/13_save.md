@@ -2,6 +2,28 @@
 
 Create a comprehensive progress checkpoint when pausing work on a feature.
 
+## Beads Integration ("Landing the Plane")
+
+Before saving, ensure Beads state is current:
+
+```bash
+# Update any in-progress beads
+bd list --status in_progress
+
+# Close completed work
+bd close <id> --reason "Completed X, Y, Z"
+
+# File remaining work as new beads
+bd create "TODO: remaining work" -p 2
+
+# Sync to git
+bd sync
+```
+
+This ensures work survives context switches and can be resumed.
+
+---
+
 ## When to Use
 
 - User needs to stop mid-implementation

@@ -2,6 +2,18 @@
 
 Perform code review with spec validation, pattern checking, and security analysis.
 
+## Beads Integration
+
+**File beads for issues found during review** (Steve Yegge tip):
+```bash
+bd create "Fix: {issue description}" -p 2
+bd dep add <new-id> <parent-feature-id> --type discovered-from
+```
+
+This creates actionable, trackable issues from code review findings.
+
+---
+
 ## Arguments
 
 - `$ARGUMENTS` - Files, directories, or git diff to review
