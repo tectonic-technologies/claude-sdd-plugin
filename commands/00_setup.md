@@ -445,29 +445,15 @@ This enables:
 - Searching for related issues
 ```
 
-If yes, run this command to add Linear MCP:
+If yes, install Linear from the marketplace:
 
 ```bash
-claude mcp add linear --url https://mcp.linear.app/sse
+/install linear
 ```
 
-Or for the full JSON config (add to .mcp.json or settings):
-
-```json
-{
-  "mcpServers": {
-    "linear": {
-      "command": "npx",
-      "args": ["-y", "@anthropic/mcp-remote", "https://mcp.linear.app/sse"]
-    }
-  }
-}
-```
-
-After adding:
-1. Restart Claude Code (or run `claude mcp list` to verify)
-2. Claude will prompt for Linear OAuth on first use
-3. Grant access to your Linear workspace
+After installing:
+1. Claude will prompt for Linear OAuth on first use
+2. Grant access to your Linear workspace
 
 **Beads vs Linear:**
 
