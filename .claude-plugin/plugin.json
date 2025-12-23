@@ -1,0 +1,11 @@
+{
+  "name": "sdd-workflow",
+  "displayName": "Spec-Driven Development Workflow",
+  "description": "GCRV refinement loop with research, spec, plan, implement pipeline. Includes 15 slash commands, constitution template, and Beads task tracking integration.",
+  "version": "1.0.0",
+  "author": "skypawalker",
+  "repository": "https://github.com/skypawalker/claude-sdd-plugin",
+  "license": "MIT",
+  "keywords": ["spec-driven-development", "sdd", "refinement-loop", "gcrv", "workflow", "planning"],
+  "commands": true
+}
