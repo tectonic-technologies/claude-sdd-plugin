@@ -445,13 +445,19 @@ This enables:
 - Searching for related issues
 ```
 
-If yes, install Linear from the marketplace:
+If yes, add Linear to the MCP registry (on-demand, not auto-loaded):
 
 ```bash
-/install linear
+/mcp-add linear
 ```
 
-After installing:
+This saves the config to `.mcp-registry.json`. When you need Linear:
+
+```bash
+/mcp-load linear
+```
+
+After loading:
 1. Claude will prompt for Linear OAuth on first use
 2. Grant access to your Linear workspace
 
