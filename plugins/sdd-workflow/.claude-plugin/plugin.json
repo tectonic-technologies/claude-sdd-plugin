@@ -1,11 +1,14 @@
 {
   "name": "sdd-workflow",
-  "description": "Spec-Driven Development Workflow - GCRV refinement loop with research, spec, plan, implement pipeline. Includes 18 slash commands, setup wizard, constitution template, and Beads task tracking integration.",
-  "version": "1.2.0",
+  "description": "Spec-Driven Development Workflow with Ralph Loop integration - GCRV refinement loop with autonomous implementation cycles. Includes 20 slash commands, stop hook for continuous iteration, setup wizard, constitution template, and Beads task tracking.",
+  "version": "2.0.0",
   "author": {
     "name": "skypawalker"
   },
   "repository": "https://github.com/tectonic-technologies/claude-sdd-plugin",
   "license": "MIT",
-  "keywords": ["spec-driven-development", "sdd", "refinement-loop", "gcrv", "workflow", "planning", "setup"]
+  "keywords": ["spec-driven-development", "sdd", "refinement-loop", "gcrv", "workflow", "planning", "setup", "ralph-loop", "autonomous"],
+  "hooks": {
+    "stop": "hooks/stop-hook.sh"
+  }
 }
