@@ -1,12 +1,12 @@
 {
-  "name": "tectonic-claude-plugins",
+  "name": "tectonic-claude-marketplace",
   "owner": {
     "name": "Tectonic Technologies",
     "email": "engineering@tectonic.so"
   },
   "description": "Internal marketplace for Claude Code plugins approved for organizational use",
-  "homepage": "https://github.com/tectonic-technologies/tectonic-claude-plugins",
-  "repository": "https://github.com/tectonic-technologies/tectonic-claude-plugins",
+  "homepage": "https://github.com/tectonic-technologies/tectonic-claude-marketplace",
+  "repository": "https://github.com/tectonic-technologies/tectonic-claude-marketplace",
   "plugins": [
     {
       "name": "sdd-workflow",
@@ -16,8 +16,8 @@
       "author": {
         "name": "skypawalker"
       },
-      "homepage": "https://github.com/tectonic-technologies/claude-sdd-plugin",
-      "repository": "https://github.com/tectonic-technologies/claude-sdd-plugin",
+      "homepage": "https://github.com/tectonic-technologies/tectonic-claude-marketplace",
+      "repository": "https://github.com/tectonic-technologies/tectonic-claude-marketplace",
       "license": "MIT",
       "keywords": ["spec-driven-development", "sdd", "refinement-loop", "gcrv", "workflow", "planning", "setup"],
       "category": "productivity"
