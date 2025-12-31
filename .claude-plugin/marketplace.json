@@ -1,0 +1,26 @@
+{
+  "name": "tectonic-claude-plugins",
+  "owner": {
+    "name": "Tectonic Technologies",
+    "email": "engineering@tectonic.so"
+  },
+  "description": "Internal marketplace for Claude Code plugins approved for organizational use",
+  "homepage": "https://github.com/tectonic-technologies/tectonic-claude-plugins",
+  "repository": "https://github.com/tectonic-technologies/tectonic-claude-plugins",
+  "plugins": [
+    {
+      "name": "sdd-workflow",
+      "source": "./plugins/sdd-workflow",
+      "description": "Spec-Driven Development Workflow - GCRV refinement loop with research, spec, plan, implement pipeline. Includes 18 slash commands, setup wizard, constitution template, and Beads task tracking integration.",
+      "version": "1.2.0",
+      "author": {
+        "name": "skypawalker"
+      },
+      "homepage": "https://github.com/tectonic-technologies/claude-sdd-plugin",
+      "repository": "https://github.com/tectonic-technologies/claude-sdd-plugin",
+      "license": "MIT",
+      "keywords": ["spec-driven-development", "sdd", "refinement-loop", "gcrv", "workflow", "planning", "setup"],
+      "category": "productivity"
+    }
+  ]
+}

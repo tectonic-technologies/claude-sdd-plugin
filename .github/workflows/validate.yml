@@ -1,0 +1,48 @@
+name: Validate Marketplace
+
+on:
+  pull_request:
+    paths:
+      - '.claude-plugin/marketplace.json'
+  push:
+    branches:
+      - main
+    paths:
+      - '.claude-plugin/marketplace.json'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Validate marketplace.json
+        run: |
+          npm run validate
+
+      - name: Check for JSON syntax errors
+        run: |
+          if ! jq empty .claude-plugin/marketplace.json 2>/dev/null; then
+            echo "::error::marketplace.json has invalid JSON syntax"
+            exit 1
+          fi
+          echo "✓ JSON syntax is valid"
+
+      - name: Summary
+        if: success()
+        run: |
+          echo "### ✅ Validation Passed" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "All marketplace.json checks passed successfully!" >> $GITHUB_STEP_SUMMARY
+
+          # Count plugins
+          PLUGIN_COUNT=$(jq '.plugins | length' .claude-plugin/marketplace.json)
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Total plugins:** $PLUGIN_COUNT" >> $GITHUB_STEP_SUMMARY

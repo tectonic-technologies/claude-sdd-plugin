@@ -1,0 +1,17 @@
+{
+  "name": "claude-plugins-marketplace",
+  "version": "1.0.0",
+  "description": "Internal Claude Code plugin marketplace",
+  "private": true,
+  "scripts": {
+    "validate": "node scripts/validate-marketplace.js",
+    "test": "npm run validate"
+  },
+  "keywords": [
+    "claude-code",
+    "plugins",
+    "marketplace"
+  ],
+  "license": "MIT",
+  "devDependencies": {}
+}
