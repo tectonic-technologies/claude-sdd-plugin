@@ -6,36 +6,58 @@ Internal marketplace for organization-approved Claude Code plugins.
 
 ### For Plugin Users
 
-Add this marketplace to your Claude Code installation:
+**Step 1: Add the marketplace**
 
 ```bash
-# Add the marketplace
-/plugin marketplace add tectonic-technologies/tectonic-claude-plugins
+/plugin marketplace add tectonic-technologies/tectonic-claude-marketplace
+```
 
+**Step 2: Install a plugin**
+
+```bash
 # List available plugins
 /plugin search
 
-# Install a plugin
-/plugin install sdd-workflow@tectonic-claude-plugins
+# Install the SDD workflow plugin
+/plugin install sdd-workflow@tectonic-claude-marketplace
 ```
 
-Or add to your project's `.claude/settings.json`:
+**Step 3: Use plugin commands**
+
+```bash
+# Run the setup wizard
+/setup
+
+# Or start with research
+/research "How do we handle authentication?"
+
+# Enable autonomous implementation
+/ralph-enable "Implement feature from specs/auth.spec.ts" --max-iterations 30
+```
+
+📖 **[Full User Guide →](./USER_GUIDE.md)** - Complete installation and usage documentation
+
+### For Teams (Auto-enable in Projects)
+
+Add to your project's `.claude/settings.json`:
 
 ```json
 {
   "extraKnownMarketplaces": {
-    "tectonic-claude-plugins": {
+    "tectonic-claude-marketplace": {
       "source": {
         "source": "github",
-        "repo": "tectonic-technologies/tectonic-claude-plugins"
+        "repo": "tectonic-technologies/tectonic-claude-marketplace"
       }
     }
   },
   "enabledPlugins": {
-    "sdd-workflow@tectonic-claude-plugins": true
+    "sdd-workflow@tectonic-claude-marketplace": true
   }
 }
 ```
+
+Commit this file - plugins will be auto-enabled for all team members!
 
 ### For Plugin Authors
 
@@ -92,6 +114,13 @@ All plugins undergo security review before inclusion. Plugins must:
 
 Report security concerns to: security@your-org.com
 
+## Documentation
+
+- **[User Guide](./USER_GUIDE.md)** - Complete guide for installing and using plugins
+- **[Setup Guide](./SETUP.md)** - For marketplace administrators
+- **[Contributing](./CONTRIBUTING.md)** - For plugin authors
+- **[Structure](./STRUCTURE.md)** - Marketplace structure reference
+
 ## Validation
 
 Validate your marketplace additions locally:
@@ -105,7 +134,7 @@ npm run validate
 
 # Test plugin installation
 /plugin marketplace add ./
-/plugin install your-plugin@tectonic-claude-plugins
+/plugin install your-plugin@tectonic-claude-marketplace
 ```
 
 ## Maintenance
