@@ -160,10 +160,11 @@ This injects ~1-2k tokens of workflow context on session start.
 | 15 | `/mcp` | MCP reference |
 | 16 | `/mcp-add` | Add MCP to registry |
 | 17 | `/mcp-load` | Load MCP on-demand |
+| 18 | `/pr-fix` | Address PR review feedback |
 
 **Typical workflow:**
 ```
-/research → /clarify → /spec → /plan → /implement → /validate → /commit
+/research → /clarify → /spec → /plan → /implement → /validate → /commit → PR → /pr-fix
                          ↓        ↓         ↓
                       (WHAT)   (HOW)   (updates plan)
 ```

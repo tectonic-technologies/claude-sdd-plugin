@@ -276,11 +276,91 @@ GENERATE → VERIFY → CRITIQUE → REFINE → (repeat until pass)
 
 ## Task Tracking with Beads
 
+Beads is external memory for AI agents with dependency tracking and query capabilities.
+It replaces messy markdown plans with a dependency-aware graph.
+
+Reference: https://github.com/steveyegge/beads
+
+### Why Beads?
+
+- **Persistent memory** - Context survives across sessions
+- **Dependency-aware** - Knows what blocks what
+- **Agent-optimized** - JSON output, auto-ready detection
+- **Git-backed** - Branches and merges with your code
+
+### Session Workflow
+
+**Start of session:**
 \`\`\`bash
-bd ready --json          # Find unblocked work
-bd create "Task title"   # Create issue
-bd close <id> --reason   # Complete work
+bd ready --json              # Find unblocked work - START HERE
+bd doctor                    # Run daily to fix issues
 \`\`\`
+
+**During work:**
+\`\`\`bash
+bd create "Task title" -p 1  # Create issue (priority 1-5)
+bd update <id> --status in_progress
+bd dep add <child> <parent>  # Link dependencies
+\`\`\`
+
+**End of session ("Landing the Plane"):**
+\`\`\`bash
+bd close <id> --reason "description"  # Complete work
+bd list                                # Review open issues
+bd sync                                # Ensure synced to git
+\`\`\`
+
+### Best Practices (from Steve Yegge)
+
+1. **File beads for anything > 2 minutes**
+   - If a task takes longer than 2 minutes, create a bead for it
+   - Ask the agent to file beads during code reviews
+
+2. **Run \`bd doctor\` daily**
+   - Diagnoses and auto-fixes issues
+   - Handles migrations and config updates
+
+3. **Regular cleanup**
+   - Run \`bd cleanup\` every few days
+   - Clean up when you exceed ~200 issues
+   - Rarely let it go beyond 500
+
+4. **Use hierarchical structure**
+   - \`bd-a3f8\` - Epic level
+   - \`bd-a3f8.1\` - Task level
+   - \`bd-a3f8.1.1\` - Sub-task level
+
+5. **Dependency types**
+   - \`blocks\` - Task X prevents Task Y
+   - \`parent-child\` - Hierarchical containment
+   - \`discovered-from\` - Found during other work
+   - \`related\` - Associated but independent
+
+### Essential Commands
+
+| Command | Purpose |
+|---------|---------|
+| \`bd init\` | Initialize in project |
+| \`bd ready --json\` | Find unblocked work |
+| \`bd create "Title" -p 1\` | Create priority-1 issue |
+| \`bd show <id>\` | View issue details |
+| \`bd dep add <child> <parent>\` | Create dependency |
+| \`bd dep tree <id>\` | Visualize hierarchy |
+| \`bd blocked\` | Show what is blocked |
+| \`bd close <id> --reason "..." \` | Complete issue |
+| \`bd cleanup\` | Remove old closed issues |
+| \`bd doctor\` | Diagnose and fix problems |
+| \`bd stats\` | Project statistics |
+
+### Editor Integration
+
+\`\`\`bash
+bd setup claude    # Claude Code integration
+bd setup cursor    # Cursor integration
+bd setup aider     # Aider integration
+\`\`\`
+
+This injects ~1-2k tokens of workflow context on session start.
 
 ---
 
@@ -355,15 +435,16 @@ If yes:
 If "Show me more info":
 ```
 Beads is external memory for AI agents (by Steve Yegge).
-- Persistent task tracking across sessions
-- Dependency-aware graph structure
+- Preserves context and decisions across sessions
+- Captures important discoveries during development
 - Git-backed, branches with your code
-- Run `bd ready` to find unblocked work
+- Helps AI agents restore context when resuming work
 
 Best practices:
-- File beads for anything > 2 minutes
-- Run `bd doctor` daily
-- Run `bd cleanup` when issues exceed ~200
+- Record architectural decisions and discoveries
+- Note non-obvious patterns found in codebase
+- Capture gotchas and edge cases
+- Sync regularly: `bd sync`
 ```
 
 

@@ -6,7 +6,7 @@ Based on research from [ARC Prize 2025](https://arcprize.org/blog/arc-prize-2025
 
 ## Features
 
-- **15 slash commands** for structured development workflow
+- **18 slash commands** for structured development workflow
 - **Spec-driven development** - Define WHAT before HOW
 - **GCRV refinement loop** - Generate, Critique, Refine, Verify
 - **Research automation** - Codebase + web research with auto-detection
@@ -70,6 +70,7 @@ go install github.com/steveyegge/beads/cmd/bd@latest
 | `/mcp` | MCP servers reference |
 | `/mcp-add` | Add MCP config to registry (not auto-loaded) |
 | `/mcp-load` | Load MCP from registry on-demand |
+| `/pr-fix` | Address PR review feedback and update spec/plan |
 
 
 ## File Structure
@@ -78,11 +79,12 @@ go install github.com/steveyegge/beads/cmd/bd@latest
 claude-sdd-plugin/
 ├── .claude-plugin/
 │   └── plugin.json          # Plugin metadata
-├── commands/                 # 15 slash commands
-│   ├── 01_research.md
-│   ├── 02_clarify.md
-│   ├── 03_spec.md
-│   ├── 04_plan.md
+├── commands/                 # 18 slash commands
+│   ├── 00-setup.md
+│   ├── 01-research.md
+│   ├── 02-clarify.md
+│   ├── 03-spec.md
+│   ├── 04-plan.md
 │   └── ...
 ├── constitution.md           # Architectural constraints template
 ├── CLAUDE.md                 # Project guide template
