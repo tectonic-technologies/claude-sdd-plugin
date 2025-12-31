@@ -46,15 +46,19 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for submission guidelines.
 ### Development Workflow
 
 #### sdd-workflow
-**Spec-Driven Development Workflow**
+**Spec-Driven Development Workflow with Ralph Loop Integration**
 
-A comprehensive workflow plugin implementing the GCRV (Generate-Critique-Refine-Verify) refinement loop.
+A comprehensive workflow plugin implementing the GCRV (Generate-Critique-Refine-Verify) refinement loop with autonomous implementation cycles.
 
-- 18 slash commands for structured development
+- 20 slash commands for structured development
+- **Ralph loop integration** - Autonomous implementation with stop hook verification
 - Research automation (codebase + web)
 - Spec-before-plan methodology
 - Beads task tracking integration
 - Constitution template for architectural constraints
+- Stop hook auto-verification (types, lint, build, tests)
+
+**New in v2.0.0**: Enable autonomous implementation cycles with `/ralph-enable` that automatically iterate until all verification checks pass.
 
 [View Plugin →](https://github.com/tectonic-technologies/claude-sdd-plugin)
 
